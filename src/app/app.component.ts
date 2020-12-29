@@ -42,11 +42,12 @@ export class AppComponent {
        	else
        		dialogConfig.data = {"dialogTitle": "Successful", "dialogMessage": "HTTP Request for number " + this.inputNumber+" was Successful."};
        	this.messages = this.data.messageList;
-       	if (this.inputTextField.length>0 && this.inputNumber.length>0)
+       	if (this.inputTextField.length>0 && this.inputNumber.length>0) {
         	this.apiService.get(this.inputTextField, this.inputNumber).subscribe((data:any)=>{						
-				this.result = data;                                                                                                                                                            ;
-				this.matDialog.open(DialogComponent, dialogConfig);
+				this.result = data;                                                                                                                                                            ;				
 			});		
+			this.matDialog.open(DialogComponent, dialogConfig);
+        }
     }
 
     validateNumber(e: any) {    	
