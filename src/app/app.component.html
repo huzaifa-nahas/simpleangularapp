@@ -1,0 +1,36 @@
+<html>
+
+<body style="height:100%; width:100%">
+  <div id="header" style="position:absolute; top:0px; left:0px; height:100px; right:0px;overflow:hidden; background-color:red; font-size: 18px; color: white;">
+    <div class="header-text">Easy Bid Angular Test</div>
+  </div>
+  <div id="input-text-number" name="input-text-number" style="position:absolute; top:100px; left:0px; height:200px; right:0px;overflow:hidden; font-size: 18px;">
+    <form [formGroup]="myForm" novalidate autocomplete="off">
+      <div class="input-text"><label>Text</label>
+        <input required maxlength="50" type="text" class="input-text-field" id="inputTextField" formControlName="inputTextField" name="inputTextField" [(ngModel)]="inputTextField">
+        <span *ngIf="myForm.controls.inputTextField.errors?.required && myForm.controls.inputTextField.touched" style="padding-left: 10px; color:red;">
+          Text is required
+        </span>
+      </div>
+      <div class="input-number"><label>Number</label><input name="inputNumberField" formControlName="inputNumberField" required type="text" class="input-number-field" [(ngModel)]="inputNumber" (keypress)="validateNumber($event)"><span *ngIf="myForm.controls.inputNumberField.errors?.required && myForm.controls.inputNumberField.touched" style="color:red; padding-left: 10px;">
+          Number is required
+        </span></div>
+    </form>
+  </div>
+  <div id="input-text-number" name="input-text-number" style="position:absolute; top:200px; left:0px; height:100px; right:0px;overflow:hidden; font-size: 18px;">
+  </div>
+  <div id=" content" style="position:absolute; top:200px; bottom:100px; left:0px; right:0px; overflow:auto;">
+    <div *ngFor="let msg of messages">
+      <li class="msg-list">{{msg}}</li>
+    </div>
+  </div>
+  <div id="footer" style="position:absolute; bottom:0px; height:100px; left:0px; right:0px; overflow:hidden; background-color: blue; font-size: 18px;">
+    <button mat-raised-button color="primary" (click)="openDialog()">
+      Submit
+    </button>
+    <p class="footer-text">Click The Button</p>
+  </div>
+</body>
+
+</html>
+<router-outlet></router-outlet>

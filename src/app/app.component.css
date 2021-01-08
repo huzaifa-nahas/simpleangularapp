@@ -1,0 +1,42 @@
+::ng-deep .mat-form-field {
+  margin-top: 10px !important;
+}
+
+::ng-deep .mat-raised-button {
+  float: right;
+  margin-right: 25px !important;
+  font-size: 1em;
+  margin-top: calc(52px - 1em) !important;
+}
+
+.footer-text {
+  color: white !important;
+  font-size: 1em;
+  margin-left: 15px;
+  margin-top: calc(52px - 0.5em) !important;
+}
+
+.header-text {
+  margin-top: calc(55px - 1em);
+  text-align: center;
+}
+
+.input-number,
+.input-text {
+  margin-top: 20px;
+  margin-left: 20px !important;
+}
+
+.input-number-field {
+  margin-left: 10px !important;
+  width: 200px;
+}
+
+.input-text-field {
+  width: 200px;
+  margin-left: 40px !important;
+}
+
+.msg-list {
+  margin-left: 20px;
+}
